@@ -55,89 +55,151 @@ table {
 
 /* ---------- Hello, my name is Izzy Pascua and this is the beginning of my CONTACT PAGE CSS for 318 Digital Typography November 2020 ------------ */
 
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: url(images/bricks_bg.jpg) 
-        center center fixed no-repeat;
+
+/* --splitscreen-- */
+
+.split {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+.left {
+    left: 0;
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    text-align: left;
+    background: url(images/california_map.jpg)
+        no-repeat;
     background-size: cover;
-	
-	
+    background-position: right bottom;
+    padding: 2px;    
 }
 
-.center {
-    width: 800px;
-	padding: 2%;
-    margin: 100px auto;
- 	background: rgba(0, 150, 178, .75); /*this uses opacity of 75% for the background color*/
-	text-align: center;
-	border: 4px dashed white;
+
+.right {
+    right: 0;
+    background-color:#E5E5E5;
+    height: 100%;
+    width: 30%;
+    position: fixed;  
 }
 
-   
-#logo {
-    margin-bottom: 16px;
-	border: 3px dashed red;
-	text-align: center;
-}
+
+
+
+/* --fonts-- */
 
 h1 {
-    font-family: garamond, serif;
-	font-size: 2em;
-    margin: 0px auto 10px auto;
-    color: #fff;
+    font-family: chantal, sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    width: 100%;
+    text-align: justify;
+    text-align: center;
 }
 
-h2 {
-	font-family: fino-sans, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-	font-size: 1.5em; 
-    line-height: 1.4;
-    color: #fff;
-    padding: 0px 0px;
-    margin: 0px auto 25px auto;
-}
 
 p {
-    font-family: garamond, serif;
-	font-size: 1.2em;
-    line-height: 1.6;
-    color: #fff;
+    font-family: brandon-grotesque, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    line-height: 1.2;
+    position: absolute;
+    top: 18%;
+    right: 63%;
+    width: 25%;
+    background-color: rgb(255, 255, 255, 0.75);
+    text-align: justify;
+    padding: 20px;
 }
     
 
-nav{
-    font-family: garamond; 
-    font-size: 12;
-    width: 400px;
-    margin: 0 auto;
-    border: dashed turquoise;
-    border-width: 3px 0;
-    text-align: center;
-    margin-top: 2em;   
-    }
 
-nav li{
+
+/* --sidebar-- */
+#logoright {
+    position: absolute;
+    top: 10%;
+    right: 27%;
+    width: 43%;
+    height: auto;
+}
+
+
+nav{
+    position: absolute;
+    top:70%;
+    right: 28%;
+    width: 40%;
+    text-align:center; 
+}
+
+
+nav li {
     display:inline;
-    }
+}
+
 
 nav a{
+    font-family: brandon-grotesque; 
+    font-weight: 400;
     display: inline-block;
     padding: 10px;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#000;
+    margin:0 15px;
+    letter-spacing:1px;
+    position:relative;
+}
+
+ 
+nav a:before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background:#D19FCC;
+    top:47%;
+    animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+
+nav a:hover:before{
+    animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+
+
+@keyframes in{
+    0%{
+        width: 0;
+        left:0;
+        right:auto;
     }
-
-a{
-    color: #444;
-    text-decoration: none;
-    font-weight: bold;
+    100%{
+        left:0;
+        right:auto;
+        width: 100%;
     }
+}
 
-a:hover{
-    color:black;
-    background:pink;
+
+@keyframes out{
+    0%{
+        width:100%;
+        left: auto;
+        right: 0;
     }
-
-
+    100%{
+        width: 0;
+        left: auto;
+        right: 0;
+    } 
+}
