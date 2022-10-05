@@ -15,9 +15,9 @@ body {
 }
 
 h1 {
-	background-color: _______;
-	color: _______; /* Same as body background. */
-	font-size: _______;
+	background-color: 245, 245, 245;
+	color: 10, 10, 10; /* Same as body background. */
+	font-size: 26;
 	padding: ____ ____ ____; /* You want three values. */
 	font-weight: _______;
 	text-transform: _______;
